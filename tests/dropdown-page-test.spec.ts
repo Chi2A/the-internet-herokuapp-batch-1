@@ -6,8 +6,8 @@ test("Dropdown validation Option 1 ", async ({ page }) => {
   let homePage = new HomePage(page);
   await page.goto("https://the-internet.herokuapp.com/");
   await homePage.clickOnLink('Dropdown')
-  await dropdownPage.selectOption('1');
-    await dropdownPage.validateSelectedOption('1')
+  await dropdownPage.selectOption('Option 1');
+    await dropdownPage.validateSelectedOptionValue('1')
 });
 
 test("Dropdown validation Option 2 ", async ({ page }) => {
@@ -15,6 +15,6 @@ test("Dropdown validation Option 2 ", async ({ page }) => {
     let homePage = new HomePage(page);
     await page.goto("https://the-internet.herokuapp.com/");
     await homePage.clickOnLink('Dropdown')
-    await dropdownPage.selectOption('2');
-    await dropdownPage.validateSelectedOption('2')
+    await dropdownPage.selectOption('Option 2');
+    await dropdownPage.validateSelectedOptionValue('2')
 })

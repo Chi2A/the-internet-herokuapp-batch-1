@@ -7,7 +7,7 @@ export class DropdownPage {
   async selectOption(optionText: string): Promise<void> {
       await this.selectDropDown.selectOption({label: optionText});
   }
-  async validateSelectedOption(expectedOptionValue: string): Promise<void> {
+  async validateSelectedOptionValue(expectedOptionValue: string): Promise<void> {
     await expect(this.selectDropDown).toHaveValue(expectedOptionValue);
   }
 }

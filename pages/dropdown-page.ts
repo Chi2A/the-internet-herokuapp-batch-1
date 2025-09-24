@@ -1,13 +1,13 @@
 import { expect, Page, Locator } from "@playwright/test";
 export class DropdownPage {
-  dropDownListLocator: Locator;
+  private selectDropDown: Locator;
   constructor(page: Page) {
-    this.dropDownListLocator = page.locator('select[id="dropdown"]');
+    this.selectDropDown = page.locator('#dropdown');
   }
-  async selectOption(menuOption: string): Promise<void> {
-    await this.dropDownListLocator.selectOption(menuOption);
+  async selectOption(optionText: string): Promise<void> {
+      await this.selectDropDown.selectOption({label: optionText});
   }
-  async validationofOptionList(expectedOption: string): Promise<void> {
-    await expect(this.dropDownListLocator).toHaveValue(expectedOption);
+  async validateSelectedOption(expectedOptionValue: string): Promise<void> {
+    await expect(this.selectDropDown).toHaveValue(expectedOptionValue);
   }
 }

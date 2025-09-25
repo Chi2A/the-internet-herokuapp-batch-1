@@ -6,9 +6,6 @@ export class ForgotPasswordPage {
 
   constructor(page: Page) {
     this.emailFieldLocator = page.getByRole("textbox", { name: "E-mail" });
-    this.resetPasswordMessageLocator = page.getByRole("heading", {
-      name: "Internal Server Error",
-    });
     this.retrievePasswordButton = page.getByRole("button", {
       name: "Retrieve password",
     });

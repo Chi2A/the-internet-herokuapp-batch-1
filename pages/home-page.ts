@@ -4,12 +4,16 @@ export class HomePage {
   homePageContentLink: Locator;
     statusCodesLinkLocator: Locator;
     forgotPasswordLinkLocator: Locator;
-  
+    notificationMessageLinkLocator: Locator;
+
   constructor(page: Page) {
     this.mainTitleLocator = page.locator('h1[class="heading"]');
     this.homePageContentLink = page.locator("div[id='content'] ul li");
     this.statusCodesLinkLocator = page.locator('a[href="/status_codes"]');
-    this.forgotPasswordLinkLocator = page.getByRole('link', { name: 'Forgot Password' })
+      this.forgotPasswordLinkLocator = page.getByRole('link', { name: 'Forgot Password' })
+      this.notificationMessageLinkLocator = page.getByRole("link", {
+        name: "Notification Messages",
+      });
   }
   async validateMainTitle(expectedTitle: string): Promise<void> {
     await expect(this.mainTitleLocator).toHaveText(expectedTitle);
@@ -22,4 +26,7 @@ export class HomePage {
 } async clickOnForgotPasswordLink(): Promise < void> {
     await this.forgotPasswordLinkLocator.click();
 }
+    async clickOnNotificationMessage(): Promise<void> { 
+        await this.notificationMessageLinkLocator.click();
+    }
 }

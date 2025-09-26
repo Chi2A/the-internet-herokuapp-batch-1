@@ -13,5 +13,5 @@ test("Form Authentification Validation", async ({ page }) => {
   await formAuthenticationPage.login("tomsmith", "SuperSecretPassword!");
   await securePage.verifySuccessfullMessage("You logged into a secure area!");
   await securePage.logout();
-  await securePage.verifyErrorMessage("You logged out of the secure area!");
+  await formAuthenticationPage.verifyLogoutMessage("You logged out of the secure area!");
 });

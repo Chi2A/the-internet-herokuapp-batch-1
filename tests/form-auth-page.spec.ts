@@ -1,7 +1,7 @@
 import { test } from "@playwright/test";
 import { HomePage } from "../pages/home-page";
-import { FormAuthenticationPage } from "../pages/form-authentication-page";
-import { SecurePage } from "../pages/secure-page";
+import { FormAuthenticationPage } from "../pages/happy-form-authentication-page";
+import { SecurePage } from "../pages/happy-secure-page";
 
 test("Form Authentification Validation", async ({ page }) => {
   let homePage = new HomePage(page);

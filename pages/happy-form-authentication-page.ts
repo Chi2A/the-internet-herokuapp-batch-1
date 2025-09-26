@@ -5,6 +5,7 @@ export class FormAuthenticationPage {
   loginButtonLocator: Locator;
   logoutMessageLocator: Locator;
 
+
   constructor(page: Page) {
     this.usernameFieldLocator = page.getByRole("textbox", { name: "Username" });
     this.passwordFieldLocator = page.getByRole("textbox", { name: "Password" });

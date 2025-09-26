@@ -10,9 +10,12 @@ export class CheckboxPage {
   async validateCheckbox1IsNotChecked(): Promise<void> {
     await expect(this.checkbox1Locator).not.toBeChecked();
   }
-  async validateCheckbox2IsNotChecked(): Promise<void> {
+  async validateCheckbox2IsChecked(): Promise<void> {
     await expect(this.checkbox2Locator).toBeChecked();
   }
+    async clickCheckBox1(): Promise<void> { 
+        await this.checkbox1Locator.click();
+    }
   async validateCheckBox1IsChecked(): Promise<void> {
     await expect(this.checkbox1Locator).toBeChecked();
   }
